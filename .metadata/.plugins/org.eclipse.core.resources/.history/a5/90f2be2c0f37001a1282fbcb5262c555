@@ -1,0 +1,21 @@
+package com.sid.dao;
+
+import java.util.List;
+
+/*Interface generique*/
+
+public interface EntityRepositoryDAO<T> {
+	
+	public T save(T p);
+	
+	public List<T> findByDesignation(String mc);
+	
+	public List<T> findAll();
+	
+	public T finfOne(Long id);
+	
+	public T update(T p);
+	
+	public void delete(Long id);
+
+}

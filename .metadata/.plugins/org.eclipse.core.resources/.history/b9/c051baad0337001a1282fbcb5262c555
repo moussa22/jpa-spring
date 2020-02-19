@@ -1,0 +1,16 @@
+package com.sid.enties;
+
+public class Produit {
+	
+	
+	private Long id;
+    private String designation;
+    private double prix;
+    private int quantite;
+    
+    public Produit() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.sid.dao;
+
+import java.util.List;
+
+import com.sid.enties.Produit;
+
+public interface IProduitDAO {
+	
+	public void save(Produit p);
+	
+	public List<Produit> findByDesignation(String mc);
+	
+	public List<Produit> findAll();
+	
+	public Produit finfOne(Long id);
+	
+	public Produit update(Produit p);
+	
+	public void delete(Long id);
+
+}

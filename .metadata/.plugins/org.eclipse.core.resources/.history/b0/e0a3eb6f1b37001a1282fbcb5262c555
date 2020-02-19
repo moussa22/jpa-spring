@@ -1,0 +1,60 @@
+package com.sid.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import com.sid.enties.Produit;
+@Repository
+@Transactional
+public class ProduitDaoImpl implements EntityRepositoryDAO<Produit>{
+	@PersistenceContext
+	private EntityManager em;
+
+	@Override
+	public Produit save(Produit p) {
+		em.persist(p);
+		return p;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Produit> findByDesignation(String mc) {
+		
+		Query query=em.createQuery("Select * form Prouit p");
+		return query.getResultList();
+	}
+
+	@Override
+	public List<Produit> findAll() {
+		
+		Query query=em.createQuery("Select * form Prouit p where p like:x");
+		em.setProperty("x", mc);
+		return query.getResultList();
+		
+	}
+
+	@Override
+	public Produit finfOne(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Produit update(Produit p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

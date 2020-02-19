@@ -1,0 +1,21 @@
+package com.sid.dao;
+
+import java.util.List;
+
+//Interface genereique
+
+public interface IProduitDAO<T> {
+	
+	public T save(Produit p);
+	
+	public List<T> findByDesignation(String mc);
+	
+	public List<T> findAll();
+	
+	public T finfOne(Long id);
+	
+	public T update(Produit p);
+	
+	public void delete(Long id);
+
+}
